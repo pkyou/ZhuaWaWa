@@ -1,14 +1,13 @@
 package com.pkyou.Sample.Controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class HelloWorldController {
 
-	@RequestMapping("/say.html")
-	public @ResponseBody String Say() {
+	@RequestMapping("/hello")
+	public  String hello() {
 		return "Hello the whole world";
 	}
 }
