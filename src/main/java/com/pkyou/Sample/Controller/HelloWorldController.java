@@ -8,6 +8,7 @@ public class HelloWorldController {
 
 	@RequestMapping("/hello")
 	public  String hello() {
-		return "Hello the whole world";
+		String data = "Never trouble trouble untill trouble troubles you. Some one told me some years ago.";
+		return data;
 	}
 }
