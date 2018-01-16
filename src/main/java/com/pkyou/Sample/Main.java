@@ -8,7 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@MapperScan("com.pkyou.Sample.Mapper")
+@MapperScan("com.pkyou.Sample.Dao")
 public class Main {
 
     public static void main(String[] args) throws Exception {
