@@ -11,12 +11,11 @@ import com.pkyou.Sample.Mapper.IScheduleMapper;
 @Service
 public class ControllerService   {
 
-	//@Autowired
-	//private IScheduleMapper mapper;
+	@Autowired
+	private IScheduleMapper mapper;
 	
 	public ArrayList<IndoorCheckItemEntity> GetIndoorCheckItemEntities() {
-		return null;
-	//	return mapper.GetWscheckItemsOfIndoor();
+		return mapper.GetWscheckItemsOfIndoor();
 	}
 
 }

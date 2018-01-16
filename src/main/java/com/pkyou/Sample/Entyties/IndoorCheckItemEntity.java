@@ -3,10 +3,6 @@ package com.pkyou.Sample.Entyties;
 import java.io.Serializable;
 
 public class IndoorCheckItemEntity implements Serializable {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6556793741331167103L;
 	private int id;
 	private int itemId;
