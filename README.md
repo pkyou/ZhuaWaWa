@@ -6,3 +6,4 @@ springBoot examples
 # 2018年01月07日 增加swagger ui 整合
    增加日志到console 和 日志文件
 # 2018-1-16 16:22:32 整合mybaits,连接oracle数据库
+# 2018-1-17 10:52:29 整合单元测试。增加普通JAVA测试和service测试。
