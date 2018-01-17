@@ -5,5 +5,5 @@ import java.util.ArrayList;
 import com.pkyou.Sample.Entyties.IndoorCheckItemEntity;
 
 public interface IIndoorInfoDao {
-	public ArrayList<IndoorCheckItemEntity> GetWscheckItemsOfIndoor();
+	public ArrayList<IndoorCheckItemEntity> getWscheckItemsOfIndoor();
 }
