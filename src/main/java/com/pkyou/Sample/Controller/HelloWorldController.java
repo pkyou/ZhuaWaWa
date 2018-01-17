@@ -29,18 +29,13 @@ public class HelloWorldController {
 		
 		String data = "this is 333 ";
 		return data;
-	}
-	
-	
+	}	
 	@Resource
 	private ControllerService service;
-	@RequestMapping(value="/GetIndoorCheckItemEntities",method=RequestMethod.GET)
+	@RequestMapping(value="/getIndoorCheckItemEntities",method=RequestMethod.GET)
 	@ApiOperation("获取数据库内容")
-	public ArrayList<IndoorCheckItemEntity> GetIndoorCheckItemEntities(){
+	public ArrayList<IndoorCheckItemEntity> getIndoorCheckItemEntities(){
 		logger.debug("start request data");
-		return service.GetIndoorCheckItemEntities();
+		return service.getIndoorCheckItemEntities();
 	}
-	
-	
-	
 }

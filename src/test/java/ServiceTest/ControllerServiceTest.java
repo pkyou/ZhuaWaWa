@@ -22,8 +22,8 @@ public class ControllerServiceTest {
 	private ArrayList<IndoorCheckItemEntity> entities;
 	
 	@Test
-	public void ResultTest(){
-		entities = service.GetIndoorCheckItemEntities();
+	public void resultTest(){
+		entities = service.getIndoorCheckItemEntities();
 		Assert.assertNotNull(entities);
 		Assert.assertEquals(3, entities.size());
 	}

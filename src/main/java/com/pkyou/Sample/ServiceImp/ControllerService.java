@@ -17,7 +17,7 @@ public class ControllerService   {
 	@Autowired
 	private IIndoorInfoDao dao;
 	
-	public ArrayList<IndoorCheckItemEntity> GetIndoorCheckItemEntities() {
-		return dao.GetWscheckItemsOfIndoor();
+	public ArrayList<IndoorCheckItemEntity> getIndoorCheckItemEntities() {
+		return dao.getWscheckItemsOfIndoor();
 	}
 }
