@@ -1,6 +1,7 @@
 package com.pkyou.Sample.Controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -19,6 +20,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/controller")
 @Api("swagger ui 注释 api 级别")
+
 public class HelloWorldController {
 
 	private final  Logger logger = (Logger) LoggerFactory.getLogger(HelloWorldController.class);
@@ -39,3 +41,6 @@ public class HelloWorldController {
 		return service.getIndoorCheckItemEntities();
 	}
 }
+
+
+
