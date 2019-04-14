@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IIndoorInfoDao {
-	public ArrayList<IndoorCheckItemEntity> getWscheckItemsOfIndoor();
+	ArrayList<IndoorCheckItemEntity> getWscheckItemsOfIndoor();
 }

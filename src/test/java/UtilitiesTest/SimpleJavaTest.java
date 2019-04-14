@@ -9,6 +9,7 @@ public class SimpleJavaTest {
 	public void equelTest(){
 		Integer i = 128;
 		Integer j = 128;
+		
 		Integer k = 127;
 		Integer l = 127;
 		Assert.assertEquals(true, i != j);

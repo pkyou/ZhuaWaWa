@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pkyou.Sample.Dao.IMyIntegralDao">
+
+    <select id="getMyIntegral" parameterType="com.pkyou.Sample.request.GetMyIntegralRequest"
+            resultType="com.pkyou.Sample.response.GetMyIntegralResponse">
+		select id userId ,coin from user
+		where id=#{userId}
+	</select>
+</mapper>
