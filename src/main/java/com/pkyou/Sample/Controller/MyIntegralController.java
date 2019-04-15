@@ -1,9 +1,11 @@
 package com.pkyou.Sample.Controller;
 
 import com.pkyou.Sample.ServiceImp.MyIntegralService;
+import com.pkyou.Sample.request.ExchangeIntegralRequest;
 import com.pkyou.Sample.request.GetIntegralExchangeRecordRequest;
 import com.pkyou.Sample.request.GetMyIntegralRequest;
 import com.pkyou.Sample.response.CommonResponse;
+import com.pkyou.Sample.response.ExchangeIntegralResponse;
 import com.pkyou.Sample.response.GetIntegralExchangeRecordResponse;
 import com.pkyou.Sample.response.GetMyIntegralResponse;
 import io.swagger.annotations.Api;
@@ -62,4 +64,25 @@ public class MyIntegralController {
         }
         return response;
     }
+
+    /**
+     * 兑换积分
+     * @return
+     */
+    public CommonResponse<ExchangeIntegralResponse> exchangeIntegral(ExchangeIntegralRequest request){
+        CommonResponse<ExchangeIntegralResponse> response = new CommonResponse<ExchangeIntegralResponse>();
+
+        try {
+            ExchangeIntegralResponse result = new ExchangeIntegralResponse();
+
+            response.setCode(1);
+            response.setResult(result);
+        }catch (Exception e){
+            response.setCode(-1);
+            response.setMessage(e.getMessage());
+        }
+        return response;
+    }
+
+
 }

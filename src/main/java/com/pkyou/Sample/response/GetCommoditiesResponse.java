@@ -1,11 +1,30 @@
 package com.pkyou.Sample.response;
 
-public class GetCommoditiesResponse {
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+
+public class GetCommoditiesResponse implements Serializable {
+    @ApiModelProperty("商品ID")
+    private int id;
+    @ApiModelProperty("商品名称")
     private String name;
+    @ApiModelProperty("详情图")
     private String detailPic;
+    @ApiModelProperty("首页图")
     private String homePic;
+    @ApiModelProperty("积分值")
     private int pointValue;
+    @ApiModelProperty("当前库存")
     private int currentStock;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
