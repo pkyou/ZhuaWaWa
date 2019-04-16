@@ -10,10 +10,7 @@ import com.pkyou.Sample.response.GetIntegralExchangeRecordResponse;
 import com.pkyou.Sample.response.GetMyIntegralResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -65,17 +62,31 @@ public class MyIntegralController {
         return response;
     }
 
+
     /**
+     *
      * 兑换积分
      * @return
+     * {
+     *   "commodities": [
+     *     {
+     *       "commodityId": 0,
+     *       "count": 0,
+     *       "value": 0
+     *     }
+     *   ],
+     *   "userId": 0
+     * }
      */
-    public CommonResponse<ExchangeIntegralResponse> exchangeIntegral(ExchangeIntegralRequest request){
+    @ApiOperation("获取我的积分")
+    @RequestMapping(value="/exchangeIntegral",method= RequestMethod.POST)
+    public CommonResponse<ExchangeIntegralResponse> exchangeIntegral(@RequestBody ExchangeIntegralRequest request){
         CommonResponse<ExchangeIntegralResponse> response = new CommonResponse<ExchangeIntegralResponse>();
 
         try {
             ExchangeIntegralResponse result = new ExchangeIntegralResponse();
 
-            response.setCode(1);
+            response.setCode(request.getUserId() - 1);
             response.setResult(result);
         }catch (Exception e){
             response.setCode(-1);
@@ -83,6 +94,4 @@ public class MyIntegralController {
         }
         return response;
     }
-
-
 }

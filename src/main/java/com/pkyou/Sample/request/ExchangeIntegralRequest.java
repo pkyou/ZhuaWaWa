@@ -2,9 +2,10 @@ package com.pkyou.Sample.request;
 
 import com.pkyou.Sample.Entyties.ExchangedCommodityDetail;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ExchangeIntegralRequest {
+public class ExchangeIntegralRequest implements Serializable {
     private int userId;
     private List<ExchangedCommodityDetail> commodities;
 

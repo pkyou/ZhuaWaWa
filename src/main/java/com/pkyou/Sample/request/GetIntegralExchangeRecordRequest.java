@@ -9,9 +9,8 @@ public class GetIntegralExchangeRecordRequest implements Serializable {
     private int userId;
     @ApiModelProperty(value="交易来源 0 收入 或者 1 消费",required=true)
     private int transactionSource;
-    /**
-     *
-     */
+
+    @ApiModelProperty(value = "收入/支出")
     private int valueType;
 
     public int getUserId() {
