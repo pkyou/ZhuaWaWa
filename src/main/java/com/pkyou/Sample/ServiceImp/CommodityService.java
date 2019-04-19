@@ -1,5 +1,8 @@
 package com.pkyou.Sample.ServiceImp;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.pkyou.Sample.Dao.ICommodityDao;
 import com.pkyou.Sample.request.GetCommoditiesRequest;
 import com.pkyou.Sample.request.GetCommodityExchangeRecordRequest;
@@ -14,8 +17,12 @@ import java.util.List;
 public class CommodityService {
     @Autowired
     private ICommodityDao dao;
-    public List<GetCommoditiesResponse> getCommodities(GetCommoditiesRequest request) {
-        return dao.getCommodities(request);
+    public PageInfo getCommodities(GetCommoditiesRequest request) {
+        PageHelper.startPage(request.getPagenum(),request.getPagesize());
+        List<GetCommoditiesResponse> responses = dao.getCommodities(request);
+
+        PageInfo page = new PageInfo(responses);
+        return page;
     }
 
     public List<GetCommodityExchangeRecordResponse> getCommodityExchangeRecord(GetCommodityExchangeRecordRequest request) {

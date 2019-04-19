@@ -1,5 +1,7 @@
 package com.pkyou.Sample.Dao;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.pkyou.Sample.request.GetCommoditiesRequest;
 import com.pkyou.Sample.request.GetCommodityExchangeRecordRequest;
 import com.pkyou.Sample.response.GetCommoditiesResponse;

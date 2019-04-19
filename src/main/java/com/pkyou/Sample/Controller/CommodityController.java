@@ -1,5 +1,7 @@
 package com.pkyou.Sample.Controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.pkyou.Sample.ServiceImp.CommodityService;
 import com.pkyou.Sample.enums.ResponseCodeEnum;
 import com.pkyou.Sample.request.GetCommoditiesRequest;
@@ -32,11 +34,11 @@ public class CommodityController {
      */
     @ApiOperation("获取商品列表")
     @RequestMapping(value="/getCommodities",method= RequestMethod.GET)
-    public CommonResponse<List<GetCommoditiesResponse>> getCommodities(@ModelAttribute GetCommoditiesRequest request){
-        CommonResponse<List<GetCommoditiesResponse>> response = new CommonResponse<List<GetCommoditiesResponse>>();
+    public CommonResponse<PageInfo> getCommodities(@ModelAttribute GetCommoditiesRequest request){
+        CommonResponse<PageInfo> response = new CommonResponse<PageInfo>();
 
         try {
-            List<GetCommoditiesResponse> result = service.getCommodities(request);
+            PageInfo result = service.getCommodities(request);
             response.setCode(ResponseCodeEnum.SUCCEED.getCode());
             response.setResult(result);
         }catch (Exception e){
