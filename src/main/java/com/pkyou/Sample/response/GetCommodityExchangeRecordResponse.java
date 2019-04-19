@@ -1,13 +1,25 @@
 package com.pkyou.Sample.response;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class GetCommodityExchangeRecordResponse {
+    @ApiModelProperty("商品ID")
     private int commodityId;
+    @ApiModelProperty("商品名称")
+    private String commodityName;
+    @ApiModelProperty("用户ID")
     private int userId;
+    @ApiModelProperty("交易时间")
     private int exchangeTime;
+    @ApiModelProperty("交易值")
     private int costValue;
+    @ApiModelProperty("收货人姓名")
     private String consigneeName;
+    @ApiModelProperty("收货人电话")
     private String consigneePhone;
+    @ApiModelProperty("收货人省份")
     private String consigneePcd;
+    @ApiModelProperty("收货人详细地址")
     private String consigneeDetail;
 
     public int getCommodityId() {
@@ -16,6 +28,14 @@ public class GetCommodityExchangeRecordResponse {
 
     public void setCommodityId(int commodityId) {
         this.commodityId = commodityId;
+    }
+
+    public String getCommodityName() {
+        return commodityName;
+    }
+
+    public void setCommodityName(String commodityName) {
+        this.commodityName = commodityName;
     }
 
     public int getUserId() {

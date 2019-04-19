@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pkyou.Sample.Dao.ICommodityDao">
+
+    <select id="getCommodities" parameterType="com.pkyou.Sample.request.GetCommoditiesRequest"
+            resultType="com.pkyou.Sample.response.GetCommoditiesResponse">
+		select id,name,detail_pic detailPic,home_pic homePic,point_value pointValue,current_stock currentStock
+		from commodity_detail where display = 1 and
+		<if test="category == -1">
+			1=1
+		</if>
+		<if test="category != -1">
+			category= #{category}
+		</if>
+	</select>
+
+	<select id="getCommodityExchangeRecord" parameterType="com.pkyou.Sample.request.GetCommodityExchangeRecordRequest"
+	resultType="com.pkyou.Sample.response.GetCommodityExchangeRecordResponse">
+		select a.commodity_id commodityId,
+			   b.name commodityName,
+			   a.user_id userId,
+			   a.cost_value costValue,
+			   a.consignee_name consigneeName,
+			   a.consignee_phone consigneePhone,
+			   a.consignee_pcd consigneePcd,
+			   a.consignee_detail consigneeDetail
+		from commodity_exchange_record a
+		left join commodity_detail b
+		on a.commodity_id = b.id
+		where a.user_id = #{userId}
+	</select>
+
+</mapper>
