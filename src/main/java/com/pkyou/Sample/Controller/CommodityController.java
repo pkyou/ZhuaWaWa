@@ -1,11 +1,11 @@
 package com.pkyou.Sample.Controller;
 
+import com.github.pagehelper.PageInfo;
 import com.pkyou.Sample.ServiceImp.CommodityService;
 import com.pkyou.Sample.enums.ResponseCodeEnum;
 import com.pkyou.Sample.request.GetCommoditiesRequest;
 import com.pkyou.Sample.request.GetCommodityExchangeRecordRequest;
 import com.pkyou.Sample.response.CommonResponse;
-import com.pkyou.Sample.response.GetCommoditiesResponse;
 import com.pkyou.Sample.response.GetCommodityExchangeRecordResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -32,11 +31,11 @@ public class CommodityController {
      */
     @ApiOperation("获取商品列表")
     @RequestMapping(value="/getCommodities",method= RequestMethod.GET)
-    public CommonResponse<List<GetCommoditiesResponse>> getCommodities(@ModelAttribute GetCommoditiesRequest request){
-        CommonResponse<List<GetCommoditiesResponse>> response = new CommonResponse<List<GetCommoditiesResponse>>();
+    public CommonResponse<PageInfo> getCommodities(@ModelAttribute GetCommoditiesRequest request){
+        CommonResponse<PageInfo> response = new CommonResponse<PageInfo>();
 
         try {
-            List<GetCommoditiesResponse> result = service.getCommodities(request);
+            PageInfo result = service.getCommodities(request);
             response.setCode(ResponseCodeEnum.SUCCEED.getCode());
             response.setResult(result);
         }catch (Exception e){

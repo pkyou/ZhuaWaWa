@@ -1,7 +1,6 @@
 package com.pkyou.Sample.Controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.annotation.Resource;
 

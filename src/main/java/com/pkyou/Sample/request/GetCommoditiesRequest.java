@@ -9,10 +9,10 @@ public class GetCommoditiesRequest implements Serializable {
     @ApiModelProperty("请求商品类别：-1 全部， 0 卡券类，1 日用品，2 数码家电，3 美妆配饰")
     private int category;
 
-    @ApiModelProperty("前端页面位于第几页")
+    @ApiModelProperty("页码")
     private int pagesize;
 
-    @ApiModelProperty("需要后传多少页面过来")
+    @ApiModelProperty("页面大小")
     private int pagenum;
 
     public int getCategory() {
