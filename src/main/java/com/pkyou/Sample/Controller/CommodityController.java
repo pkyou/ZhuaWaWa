@@ -1,6 +1,7 @@
 package com.pkyou.Sample.Controller;
 
 import com.pkyou.Sample.ServiceImp.CommodityService;
+import com.pkyou.Sample.enums.ResponseCodeEnum;
 import com.pkyou.Sample.request.GetCommoditiesRequest;
 import com.pkyou.Sample.request.GetCommodityExchangeRecordRequest;
 import com.pkyou.Sample.response.CommonResponse;
@@ -36,10 +37,10 @@ public class CommodityController {
 
         try {
             List<GetCommoditiesResponse> result = service.getCommodities(request);
-            response.setCode(1);
+            response.setCode(ResponseCodeEnum.SUCCEED.getCode());
             response.setResult(result);
         }catch (Exception e){
-            response.setCode(-1);
+            response.setCode(ResponseCodeEnum.FAILED.getCode());
             response.setMessage(e.getMessage());
         }
         return response;
@@ -50,16 +51,18 @@ public class CommodityController {
      * @param request 请求参数，商品ID,用户ID
      * @return
      */
-    public CommonResponse<List<GetCommodityExchangeRecordResponse>> GetCommodityExchangeRecord
-            (GetCommodityExchangeRecordRequest request){
+    @ApiOperation("获取商品兑换记录")
+    @RequestMapping(value="/getCommodityExchangeRecord",method= RequestMethod.GET)
+    public CommonResponse<List<GetCommodityExchangeRecordResponse>> getCommodityExchangeRecord
+            (@ModelAttribute GetCommodityExchangeRecordRequest request){
         CommonResponse<List<GetCommodityExchangeRecordResponse>> response = new CommonResponse<List<GetCommodityExchangeRecordResponse>>();
         try {
-            List<GetCommodityExchangeRecordResponse> result = new ArrayList<GetCommodityExchangeRecordResponse>();
+            List<GetCommodityExchangeRecordResponse> result = service.getCommodityExchangeRecord(request);
             //
-            response.setCode(1);
+            response.setCode(ResponseCodeEnum.SUCCEED.getCode());
             response.setResult(result);
         }catch (Exception e){
-            response.setCode(-1);
+            response.setCode(-ResponseCodeEnum.FAILED.getCode());
 
             response.setMessage(e.getMessage());
         }

@@ -1,6 +1,7 @@
 package com.pkyou.Sample.Controller;
 
 import com.pkyou.Sample.ServiceImp.MyIntegralService;
+import com.pkyou.Sample.enums.ResponseCodeEnum;
 import com.pkyou.Sample.request.ExchangeIntegralRequest;
 import com.pkyou.Sample.request.GetIntegralExchangeRecordRequest;
 import com.pkyou.Sample.request.GetMyIntegralRequest;
@@ -33,10 +34,10 @@ public class MyIntegralController {
         try {
             GetMyIntegralResponse result = service.getMyIntegral(request);
             response.setResult(result);
-            response.setCode(1);
+            response.setCode(ResponseCodeEnum.SUCCEED.getCode());
         }
         catch (Exception e){
-            response.setCode(-1);
+            response.setCode(ResponseCodeEnum.FAILED.getCode());
             response.setMessage(e.getMessage());
         }
 
@@ -53,10 +54,10 @@ public class MyIntegralController {
         CommonResponse<List<GetIntegralExchangeRecordResponse>> response = new CommonResponse<List<GetIntegralExchangeRecordResponse>>();
         try {
             List<GetIntegralExchangeRecordResponse> result = new ArrayList<GetIntegralExchangeRecordResponse>();
-            response.setCode(1);
+            response.setCode(ResponseCodeEnum.SUCCEED.getCode());
             response.setResult(result);
         }catch (Exception e){
-            response.setCode(-1);
+            response.setCode(ResponseCodeEnum.FAILED.getCode());
             response.setMessage(e.getMessage());
         }
         return response;
@@ -78,7 +79,7 @@ public class MyIntegralController {
      *   "userId": 0
      * }
      */
-    @ApiOperation("获取我的积分")
+    @ApiOperation("兑换积分")
     @RequestMapping(value="/exchangeIntegral",method= RequestMethod.POST)
     public CommonResponse<ExchangeIntegralResponse> exchangeIntegral(@RequestBody ExchangeIntegralRequest request){
         CommonResponse<ExchangeIntegralResponse> response = new CommonResponse<ExchangeIntegralResponse>();
@@ -86,10 +87,10 @@ public class MyIntegralController {
         try {
             ExchangeIntegralResponse result = new ExchangeIntegralResponse();
 
-            response.setCode(request.getUserId() - 1);
+            response.setCode(ResponseCodeEnum.SUCCEED.getCode());
             response.setResult(result);
         }catch (Exception e){
-            response.setCode(-1);
+            response.setCode(ResponseCodeEnum.FAILED.getCode());
             response.setMessage(e.getMessage());
         }
         return response;

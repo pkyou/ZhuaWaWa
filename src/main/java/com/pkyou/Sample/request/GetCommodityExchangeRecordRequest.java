@@ -1,8 +1,12 @@
 package com.pkyou.Sample.request;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class GetCommodityExchangeRecordRequest {
+    @ApiModelProperty("商品ID")
     private int commodityId;
-    private int userID;
+    @ApiModelProperty("用户ID")
+    private int userId;
 
     public int getCommodityId() {
         return commodityId;
@@ -12,11 +16,11 @@ public class GetCommodityExchangeRecordRequest {
         this.commodityId = commodityId;
     }
 
-    public int getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

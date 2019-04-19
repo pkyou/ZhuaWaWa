@@ -1,5 +1,6 @@
 package com.pkyou.Sample.Controller;
 
+import com.pkyou.Sample.enums.ResponseCodeEnum;
 import com.pkyou.Sample.request.GetMyIntegralRequest;
 import com.pkyou.Sample.response.BannerResponse;
 import com.pkyou.Sample.response.CommonResponse;
@@ -15,10 +16,10 @@ public class MyBannerController {
             BannerResponse result = new BannerResponse();
             result.setUrl("testUrl");
             response.setResult(result);
-            response.setCode(200);
+            response.setCode(ResponseCodeEnum.SUCCEED.getCode());
         }
         catch (Exception e){
-            response.setCode(-1);
+            response.setCode(ResponseCodeEnum.FAILED.getCode());
             response.setMessage(e.getMessage());
         }
         return response;

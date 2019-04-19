@@ -14,4 +14,20 @@
 		</if>
 	</select>
 
+	<select id="getCommodityExchangeRecord" parameterType="com.pkyou.Sample.request.GetCommodityExchangeRecordRequest"
+	resultType="com.pkyou.Sample.response.GetCommodityExchangeRecordResponse">
+		select a.commodity_id commodityId,
+			   b.name commodityName,
+			   a.user_id userId,
+			   a.cost_value costValue,
+			   a.consignee_name consigneeName,
+			   a.consignee_phone consigneePhone,
+			   a.consignee_pcd consigneePcd,
+			   a.consignee_detail consigneeDetail
+		from commodity_exchange_record a
+		left join commodity_detail b
+		on a.commodity_id = b.id
+		where a.user_id = #{userId}
+	</select>
+
 </mapper>
