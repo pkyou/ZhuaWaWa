@@ -1,13 +1,11 @@
 package com.pkyou.Sample.Controller;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import com.pkyou.Sample.ServiceImp.CommodityService;
 import com.pkyou.Sample.enums.ResponseCodeEnum;
 import com.pkyou.Sample.request.GetCommoditiesRequest;
 import com.pkyou.Sample.request.GetCommodityExchangeRecordRequest;
 import com.pkyou.Sample.response.CommonResponse;
-import com.pkyou.Sample.response.GetCommoditiesResponse;
 import com.pkyou.Sample.response.GetCommodityExchangeRecordResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

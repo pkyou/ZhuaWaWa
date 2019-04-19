@@ -4,7 +4,6 @@ import com.pkyou.Sample.enums.ResponseCodeEnum;
 import com.pkyou.Sample.request.GetMyIntegralRequest;
 import com.pkyou.Sample.response.BannerResponse;
 import com.pkyou.Sample.response.CommonResponse;
-import com.pkyou.Sample.response.GetMyIntegralResponse;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 public class MyBannerController {
