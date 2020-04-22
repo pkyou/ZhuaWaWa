@@ -3,3 +3,4 @@
 .settings/
 .vscode/
 *.iml
+*.log
